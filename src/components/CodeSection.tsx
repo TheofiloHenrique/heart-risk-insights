@@ -72,10 +72,10 @@ print("- Colunas de label (_Label) criadas para visualização.")
 
 # --- ETAPA 6: Verificação Final ---
 print("\\n--- PRÉ-PROCESSAMENTO CONCLUÍDO ---")
-print(f"Formato final: {df.shape}")
+print(f"Formato final: \${df.shape}")
 print(f"\\nDistribuição da variável-alvo:")
 print(df['Heart Attack Risk'].value_counts().to_string())
-print(f"\\nPorcentagem com risco: {df['Heart Attack Risk'].mean()*100:.1f}%")
+print(f"\\nPorcentagem com risco: \${df['Heart Attack Risk'].mean()*100:.1f}%")
 print(f"\\nTipos de dados:")
 print(df.dtypes.value_counts())
 
