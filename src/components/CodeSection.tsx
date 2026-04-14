@@ -71,12 +71,12 @@ df['Risk_Label'] = df['Heart Attack Risk'].map({0: 'Sem Risco', 1: 'Com Risco'})
 print("- Colunas de label (_Label) criadas para visualização.")
 
 # --- ETAPA 6: Verificação Final ---
-print("\n--- PRÉ-PROCESSAMENTO CONCLUÍDO ---")
+print("\\n--- PRÉ-PROCESSAMENTO CONCLUÍDO ---")
 print(f"Formato final: {df.shape}")
-print(f"\nDistribuição da variável-alvo:")
+print(f"\\nDistribuição da variável-alvo:")
 print(df['Heart Attack Risk'].value_counts().to_string())
-print(f"\nPorcentagem com risco: {df['Heart Attack Risk'].mean()*100:.1f}%")
-print(f"\nTipos de dados:")
+print(f"\\nPorcentagem com risco: {df['Heart Attack Risk'].mean()*100:.1f}%")
+print(f"\\nTipos de dados:")
 print(df.dtypes.value_counts())
 
 # Configuração de estilo dos gráficos
@@ -104,7 +104,7 @@ axes[0].set_title(\"Matriz de Correlação Geral\", fontsize=14, fontweight='bol
 colors = ['#C0392B' if v > 0 else '#5B8DB8' for v in corr_target]
 axes[1].barh(corr_target.index, corr_target.values, color=colors)
 axes[1].axvline(0, color='black', linewidth=0.8)
-axes[1].set_title(\"Correlação de Cada Variável com\nHeart Attack Risk\", fontsize=14, fontweight='bold')
+axes[1].set_title(\"Correlação de Cada Variável com\\nHeart Attack Risk\", fontsize=14, fontweight='bold')
 axes[1].set_xlabel(\"Coeficiente de Correlação de Pearson\")
 # Linha de referência visual para |r| > 0.1 (fraca mas relevante)
 axes[1].axvline(0.1,  color='gray', linestyle='--', linewidth=0.7, label='|r|=0.1')
@@ -215,7 +215,7 @@ sns.scatterplot(data=df, x='Cholesterol', y='Triglycerides',
                 hue='Risk_Label', alpha=0.4,
                 palette={'Sem Risco': '#5B8DB8', 'Com Risco': '#C0392B'},
                 ax=axes[0])
-axes[0].set_title(\"Colesterol vs Triglicerídeos\n(pontos coloridos por risco)\", fontsize=13, fontweight='bold')
+axes[0].set_title(\"Colesterol vs Triglicerídeos\\n(pontos coloridos por risco)\", fontsize=13, fontweight='bold')
 axes[0].legend(title='Risco')
  
 for risk_val, label, color in [(0, 'Sem Risco', '#5B8DB8'), (1, 'Com Risco', '#C0392B')]:
@@ -223,7 +223,7 @@ for risk_val, label, color in [(0, 'Sem Risco', '#5B8DB8'), (1, 'Com Risco', '#C
     sns.kdeplot(data=subset, x='Cholesterol', y='Triglycerides',
                 levels=5, color=color, linewidths=1.5, label=label, ax=axes[1])
  
-axes[1].set_title(\"Densidade 2D: Colesterol vs Triglicerídeos\n(sobreposição das classes)\", fontsize=13, fontweight='bold')
+axes[1].set_title(\"Densidade 2D: Colesterol vs Triglicerídeos\\n(sobreposição das classes)\", fontsize=13, fontweight='bold')
 axes[1].legend(title='Risco')
  
 plt.tight_layout()
@@ -257,7 +257,7 @@ df_plot['Risco'] = df_plot['Heart Attack Risk'].map({0: 'Sem Risco', 1: 'Com Ris
 sns.countplot(data=df_plot, x='Gênero', hue='Risco',
               palette={'Sem Risco': '#5B8DB8', 'Com Risco': '#C0392B'},
               ax=axes[1])
-axes[1].set_title(\"Contagem Absoluta por Gênero\n(⚠ Dataset desbalanceado: mais homens)\", fontsize=13, fontweight='bold')
+axes[1].set_title(\"Contagem Absoluta por Gênero\\n(⚠ Dataset desbalanceado: mais homens)\", fontsize=13, fontweight='bold')
 axes[1].legend(title='Risco')
  
 plt.tight_layout()
@@ -278,39 +278,39 @@ const CodeSection = () => {
   };
 
   return (
-    <section id=\"codigo\" className=\"py-20\">
+    <section id="codigo" className="py-20">
       <div
         ref={ref}
-        className={\`container mx-auto px-4 transition-all duration-700 \${
-          isVisible ? \"animate-fade-up\" : \"opacity-0 translate-y-8\"
-        }\`}
+        className={`container mx-auto px-4 transition-all duration-700 ${
+          isVisible ? "animate-fade-up" : "opacity-0 translate-y-8"
+        }`}
       >
-        <h2 className=\"text-3xl md:text-4xl font-bold text-center mb-4 text-foreground\">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
           Acesse o Código
         </h2>
-        <p className=\"text-center text-muted-foreground mb-10 max-w-xl mx-auto\">
+        <p className="text-center text-muted-foreground mb-10 max-w-xl mx-auto">
           Todo o pré-processamento e geração dos gráficos foi realizado em Python, utilizando pandas, seaborn e
           scikit-learn. O código está disponível abaixo para visualização.
         </p>
 
-        <div className=\"max-w-4xl mx-auto relative\">
-          <div className=\"flex items-center justify-between bg-foreground rounded-t-xl px-4 py-3\">
-            <div className=\"flex items-center gap-2\">
-              <div className=\"w-3 h-3 rounded-full bg-health-red\" />
-              <div className=\"w-3 h-3 rounded-full bg-accent\" />
-              <div className=\"w-3 h-3 rounded-full bg-primary\" />
+        <div className="max-w-4xl mx-auto relative">
+          <div className="flex items-center justify-between bg-foreground rounded-t-xl px-4 py-3">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-health-red" />
+              <div className="w-3 h-3 rounded-full bg-accent" />
+              <div className="w-3 h-3 rounded-full bg-primary" />
             </div>
-            <span className=\"text-xs text-muted font-mono\">analysis.py</span>
+            <span className="text-xs text-muted font-mono">analysis.py</span>
             <button
               onClick={handleCopy}
-              className=\"text-xs bg-primary/20 hover:bg-primary/30 text-primary-foreground px-3 py-1 rounded transition-colors font-medium\"
+              className="text-xs bg-primary/20 hover:bg-primary/30 text-primary-foreground px-3 py-1 rounded transition-colors font-medium"
             >
-              {copied ? \"✓ Copiado!\" : \"Copiar código\"}
+              {copied ? "✓ Copiado!" : "Copiar código"}
             </button>
           </div>
-          <div className=\"bg-foreground rounded-b-xl overflow-x-auto max-h-[500px] overflow-y-auto\">
-            <pre className=\"p-4 text-xs md:text-sm leading-relaxed\">
-              <code className=\"text-primary-foreground font-mono whitespace-pre\">{pythonCode}</code>
+          <div className="bg-foreground rounded-b-xl overflow-x-auto max-h-[500px] overflow-y-auto">
+            <pre className="p-4 text-xs md:text-sm leading-relaxed">
+              <code className="text-primary-foreground font-mono whitespace-pre">{pythonCode}</code>
             </pre>
           </div>
         </div>
