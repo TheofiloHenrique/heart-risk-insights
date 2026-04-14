@@ -1,20 +1,31 @@
 
 
-## Problem
+## Plan
 
-The GitHub Actions workflow fails because `package-lock.json` is out of sync with `package.json`. Test-related dependencies (vitest, @testing-library/*, jsdom, etc.) were added to `package.json` but never recorded in the lock file.
+### Problem
+The app uses `HashRouter`, which relies on the URL hash (`#/`) for routing. Anchor links like `href="#dataset"` overwrite that hash, causing the router to navigate to a non-existent route and show 404.
 
-## Solution
+### Solution
 
-Run `npm install` locally to regenerate `package-lock.json`, then commit and push both files. This is a one-step fix.
+**1. Fix navigation links — use scroll instead of anchor hrefs**
 
-### Steps
+In `Navbar.tsx` and `HeroSection.tsx`, replace `href="#dataset"` style links with `onClick` handlers that use `document.getElementById('dataset')?.scrollIntoView({ behavior: 'smooth' })`. This avoids interfering with HashRouter.
 
-1. **Regenerate the lock file** — In the Lovable sandbox, delete the current `package-lock.json` and run `npm install` to create a fresh one that includes all dependencies from `package.json`.
+Files changed: `src/components/Navbar.tsx`, `src/components/HeroSection.tsx`
 
-2. **Commit and push** — After the lock file is regenerated, commit the updated `package-lock.json` to the `main` branch and push. The GitHub Actions workflow will then succeed with `npm ci`.
+**2. Create a README.md for the academic project**
+
+Write a README in Portuguese explaining:
+- Project title: HeartRisk EDA — Análise Exploratória de Dados de Risco de Infarto
+- Academic context: IA & Machine Learning course
+- Dataset: synthetic global dataset with 8,763 patients from 20 countries, 26 variables
+- What the site shows: EDA with charts (correlation matrix, BMI vs blood pressure, age vs risk, habits, cholesterol/triglycerides, gender vs risk)
+- Tech stack: React, TypeScript, Vite, Tailwind CSS, deployed on GitHub Pages
+- How to run locally
+
+File changed: `README.md`
 
 ### Technical Detail
-
-`npm ci` requires an exact match between `package.json` and `package-lock.json`. Since Lovable added testing packages (vitest, jsdom, @testing-library/*) to `package.json` without updating the lock file, the mismatch causes the CI failure. Regenerating the lock file resolves this entirely.
+- Navigation will use `scrollIntoView({ behavior: 'smooth' })` with `e.preventDefault()` to prevent hash changes
+- Section IDs (`dataset`, `graficos`, `conclusao`, `codigo`) already exist on the components
 
