@@ -34,22 +34,6 @@ A aplicação web interativa exibe os resultados da análise exploratória atrav
 - **Recharts** — visualização de dados
 - **GitHub Pages** — deploy
 
-## 🚀 Como rodar localmente
-
-```bash
-# Clonar o repositório
-git clone https://github.com/theofilohenrique/heart-risk-insights.git
-cd heart-risk-insights
-
-# Instalar dependências
-npm install
-
-# Iniciar servidor de desenvolvimento
-npm run dev
-```
-
-O projeto estará disponível em `http://localhost:5173`.
-
 ## 📄 Licença
 
 Projeto acadêmico — uso educacional.
