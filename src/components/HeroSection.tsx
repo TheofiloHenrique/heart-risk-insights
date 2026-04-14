@@ -33,15 +33,15 @@ const HeroSection = () => {
           <span className="font-semibold text-foreground">20 países</span>.
         </p>
 
-        <a
-          href="#dataset"
+        <button
+          onClick={() => document.getElementById("dataset")?.scrollIntoView({ behavior: "smooth" })}
           className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
         >
           Explorar Análise
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" d="M19 9l-7 7-7-7" />
           </svg>
-        </a>
+        </button>
       </div>
 
       {/* Bottom ECG divider */}
