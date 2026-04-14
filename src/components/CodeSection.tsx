@@ -71,12 +71,12 @@ df['Risk_Label'] = df['Heart Attack Risk'].map({0: 'Sem Risco', 1: 'Com Risco'})
 print("- Colunas de label (_Label) criadas para visualização.")
 
 # --- ETAPA 6: Verificação Final ---
-print("\\n--- PRÉ-PROCESSAMENTO CONCLUÍDO ---")
-print(f"Formato final: \${df.shape}")
-print(f"\\nDistribuição da variável-alvo:")
+print("\n--- PRÉ-PROCESSAMENTO CONCLUÍDO ---")
+print(f"Formato final: {df.shape}")
+print(f"\nDistribuição da variável-alvo:")
 print(df['Heart Attack Risk'].value_counts().to_string())
-print(f"\\nPorcentagem com risco: \${df['Heart Attack Risk'].mean()*100:.1f}%")
-print(f"\\nTipos de dados:")
+print(f"\nPorcentagem com risco: {df['Heart Attack Risk'].mean()*100:.1f}%")
+print(f"\nTipos de dados:")
 print(df.dtypes.value_counts())
 
 # Configuração de estilo dos gráficos
@@ -104,7 +104,7 @@ axes[0].set_title(\"Matriz de Correlação Geral\", fontsize=14, fontweight='bol
 colors = ['#C0392B' if v > 0 else '#5B8DB8' for v in corr_target]
 axes[1].barh(corr_target.index, corr_target.values, color=colors)
 axes[1].axvline(0, color='black', linewidth=0.8)
-axes[1].set_title(\"Correlação de Cada Variável com\\nHeart Attack Risk\", fontsize=14, fontweight='bold')
+axes[1].set_title(\"Correlação de Cada Variável com\nHeart Attack Risk\", fontsize=14, fontweight='bold')
 axes[1].set_xlabel(\"Coeficiente de Correlação de Pearson\")
 # Linha de referência visual para |r| > 0.1 (fraca mas relevante)
 axes[1].axvline(0.1,  color='gray', linestyle='--', linewidth=0.7, label='|r|=0.1')
@@ -215,7 +215,7 @@ sns.scatterplot(data=df, x='Cholesterol', y='Triglycerides',
                 hue='Risk_Label', alpha=0.4,
                 palette={'Sem Risco': '#5B8DB8', 'Com Risco': '#C0392B'},
                 ax=axes[0])
-axes[0].set_title(\"Colesterol vs Triglicerídeos\\n(pontos coloridos por risco)\", fontsize=13, fontweight='bold')
+axes[0].set_title(\"Colesterol vs Triglicerídeos\n(pontos coloridos por risco)\", fontsize=13, fontweight='bold')
 axes[0].legend(title='Risco')
  
 for risk_val, label, color in [(0, 'Sem Risco', '#5B8DB8'), (1, 'Com Risco', '#C0392B')]:
@@ -223,7 +223,7 @@ for risk_val, label, color in [(0, 'Sem Risco', '#5B8DB8'), (1, 'Com Risco', '#C
     sns.kdeplot(data=subset, x='Cholesterol', y='Triglycerides',
                 levels=5, color=color, linewidths=1.5, label=label, ax=axes[1])
  
-axes[1].set_title(\"Densidade 2D: Colesterol vs Triglicerídeos\\n(sobreposição das classes)\", fontsize=13, fontweight='bold')
+axes[1].set_title(\"Densidade 2D: Colesterol vs Triglicerídeos\n(sobreposição das classes)\", fontsize=13, fontweight='bold')
 axes[1].legend(title='Risco')
  
 plt.tight_layout()
@@ -257,7 +257,7 @@ df_plot['Risco'] = df_plot['Heart Attack Risk'].map({0: 'Sem Risco', 1: 'Com Ris
 sns.countplot(data=df_plot, x='Gênero', hue='Risco',
               palette={'Sem Risco': '#5B8DB8', 'Com Risco': '#C0392B'},
               ax=axes[1])
-axes[1].set_title(\"Contagem Absoluta por Gênero\\n(⚠ Dataset desbalanceado: mais homens)\", fontsize=13, fontweight='bold')
+axes[1].set_title(\"Contagem Absoluta por Gênero\n(⚠ Dataset desbalanceado: mais homens)\", fontsize=13, fontweight='bold')
 axes[1].legend(title='Risco')
  
 plt.tight_layout()
@@ -265,7 +265,7 @@ plt.savefig('grafico6_genero.png', dpi=150, bbox_inches='tight')
 plt.show()
 print(\"✔ Gráfico 6 salvo.\")
  
-print(\"\\n✅ Todos os gráficos gerados e salvos com sucesso!\")\`;
+print(\"\n✅ Todos os gráficos gerados e salvos com sucesso!\")`;
 
 const CodeSection = () => {
   const { ref, isVisible } = useScrollAnimation();
