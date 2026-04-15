@@ -8,7 +8,7 @@ const Footer = () => (
         <span className="font-bold text-primary-foreground">HeartRisk EDA</span>
       </div>
       <p className="text-primary-foreground/70 text-sm mb-2">
-        Trabalho acadêmico — Disciplina de IA & Machine Learning
+        Trabalho acadêmico — Disciplina de INTELIGÊNCIA ARTIFICIAL E DATA SCIENCE
       </p>
       <p className="text-primary-foreground/70 text-sm mb-4">
         Alunos: Theofilo Henrique, Rony Vieira, Jamilly Eloi e Samuel Ruan
