@@ -184,11 +184,9 @@ const RiskAssessment = () => {
     if (!validateStep()) return;
     if (step < totalSteps - 1) {
       setStep(step + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       const res = predictRisk(formData) as RiskResult;
       setResult(res);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
