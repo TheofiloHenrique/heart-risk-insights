@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-// @ts-expect-error - plain JS module
 import { predictRisk, FORM_FIELDS, FORM_STEPS } from "@/heartRiskModel";
 
 type FieldDef = {
