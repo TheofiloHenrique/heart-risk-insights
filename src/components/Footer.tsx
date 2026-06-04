@@ -11,7 +11,7 @@ const Footer = () => (
         Academic project — Artificial Intelligence & Data Science
       </p>
       <p className="text-primary-foreground/70 text-sm mb-4">
-        Students: Theofilo Henrique, Rony Vieira, Jamilly Eloi and Samuel Ruan
+        Students: Theofilo Henrique, Rony Vieira and Jamilly Eloi 
       </p>
       <p className="text-primary-foreground/50 text-xs">
         Dataset: Heart Attack Risk Prediction — Kaggle (Sourav Banerjee)
