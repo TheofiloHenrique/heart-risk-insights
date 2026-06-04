@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { label: "Dataset", id: "dataset" },
-  { label: "Gráficos", id: "graficos" },
-  { label: "Conclusão", id: "conclusao" },
-  { label: "Código", id: "codigo" },
+  { label: "Assessment", id: "assessment" },
+  { label: "About the Dataset", id: "dataset" },
 ];
 
 const scrollTo = (id: string) => {
@@ -35,7 +33,7 @@ const Navbar = () => {
           <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M3,12 L6,12 L8,6 L10,18 L12,3 L14,21 L16,12 L18,12 L21,12" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          HeartRisk EDA
+          HeartRisk AI
         </button>
 
         <div className="hidden md:flex items-center gap-8">
