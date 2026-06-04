@@ -1,10 +1,10 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const metrics = [
-  { value: "8.763", label: "Pacientes", icon: "👥" },
-  { value: "20", label: "Países / 6 Continentes", icon: "🌍" },
-  { value: "26", label: "Variáveis Analisadas", icon: "📊" },
-  { value: "35,8%", label: "Com Risco Positivo", icon: "❤️" },
+  { value: "8,763", label: "Patients", icon: "👥" },
+  { value: "20", label: "Countries / 6 Continents", icon: "🌍" },
+  { value: "26", label: "Variables Analyzed", icon: "📊" },
+  { value: "35.8%", label: "Positive Risk Cases", icon: "❤️" },
 ];
 
 const DatasetSection = () => {
@@ -19,7 +19,7 @@ const DatasetSection = () => {
         }`}
       >
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-          Sobre o Dataset
+          About the Dataset
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
           Heart Attack Risk Prediction — Kaggle
@@ -42,10 +42,10 @@ const DatasetSection = () => {
 
         <div className="max-w-3xl mx-auto bg-muted/50 rounded-xl p-6 border border-border">
           <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-            O dataset <span className="font-semibold text-foreground">Heart Attack Risk Prediction</span> (Kaggle) é
-            sintético, gerado para fins acadêmicos. Isso significa que as variáveis foram criadas sem um modelo causal
-            real entre elas — característica que se refletiu diretamente nos resultados da análise e que será discutida
-            ao longo desta apresentação.
+            The <span className="font-semibold text-foreground">Heart Attack Risk Prediction</span> dataset
+            (Kaggle) is synthetic, generated for academic purposes. The AI model powering this assessment
+            was trained on these 8,763 patient records spanning 20 countries across 6 continents, using 18
+            clinical and lifestyle features to estimate heart attack risk.
           </p>
         </div>
       </div>
